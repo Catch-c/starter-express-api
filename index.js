@@ -19,7 +19,7 @@ const limiter = rateLimit({
 });
 
 // Route to get a random line from the text file
-app.get('/api/random-line', limiter, (req, res) => {
+app.get('/', limiter, (req, res) => {
   const line = lines[Math.floor(Math.random() * lines.length)];
   res.json({ line });
 });
